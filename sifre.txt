@@ -1,2 +1,2 @@
-
-mongodb+srv://3WCbLP0hgJBXUKpH:3WCbLP0hgJBXUKpH@cluster0.8xiom.mongodb.net/
+PORT= 8080
+MONGO_URI= mongodb+srv://3WCbLP0hgJBXUKpH:3WCbLP0hgJBXUKpH@cluster0.8xiom.mongodb.net/
