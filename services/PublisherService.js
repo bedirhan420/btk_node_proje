@@ -6,11 +6,11 @@ const createPublisher = async (PublisherData) => {
 };
 
 const getAllPublishers = async () => {
-    return await Publisher.find().populate('Singer');
+    return await Publisher.find().populate('Album');
 };
 
 const getPublisherById = async (publisherId) => {
-    return await Publisher.findById(publisherId).populate('Singer');
+    return await Publisher.findById(publisherId).populate('Album');
 };
 
 const updatePublisher = async (publisherId, publisherData) => {
