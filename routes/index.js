@@ -7,7 +7,8 @@ let routes = fs.readdirSync(path.join(__dirname));
 
 for (const route of routes) {
     if (route.includes(".js") && route !== "index.js") {
-        let routePath = path.join(__dirname, route);
+        let routeEndpoint = route.toLowerCase().replace("router","");
+        let routePath = path.join(__dirname, routeEndpoint);
         router.use("/" + route.replace(".js", ""), require(routePath));
     }
 }
