@@ -1,5 +1,4 @@
 const mongoose =  require('mongoose');
-const Singer = require('./Singer');
 
 const publisherSchema = new mongoose.Schema({
     name: {
@@ -9,4 +8,4 @@ const publisherSchema = new mongoose.Schema({
     singer: { type: mongoose.Schema.Types.ObjectId, ref: 'Singer' }});
 
 const Publisher = mongoose.model('Publisher', publisherSchema);
-module.exports = {Publisher, Singer};
+module.exports = Publisher;
