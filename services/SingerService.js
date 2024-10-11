@@ -1,8 +1,8 @@
 const Singer = require('../models/Singer');
 
 const createSinger = async (SingerData) => {
-    const Singer = new Singer(SingerData);
-    return await Singer.save();
+    const singer = new Singer(SingerData);
+    return await singer.save();
 };
 
 const getAllSingers = async () => {

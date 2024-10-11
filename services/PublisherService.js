@@ -1,8 +1,8 @@
 const Publisher = require('../models/publisher');
 
 const createPublisher = async (PublisherData) => {
-    const Publisher = new Publisher(PublisherData);
-    return await Publisher.save();
+    const publisher = new Publisher(PublisherData);
+    return await publisher.save();
 };
 
 const getAllPublishers = async () => {

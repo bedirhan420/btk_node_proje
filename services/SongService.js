@@ -1,16 +1,16 @@
 const Song = require('../models/Song');
 
 const createSong = async (SongData) => {
-    const Song = new Song(SongData);
-    return await Song.save();
+    const song = new Song(SongData);
+    return await song.save();
 };
 
 const getAllSongs = async () => {
-    return await Song.find().populate('songs').populate('Song').populate('publisher');
+    return await Song.find();
 };
 
 const getSongById = async (SongId) => {
-    return await Song.findById(SongId).populate('songs').populate('Song').populate('publisher');
+    return await Song.findById(SongId);
 };
 
 const updateSong = async (SongId, SongData) => {
