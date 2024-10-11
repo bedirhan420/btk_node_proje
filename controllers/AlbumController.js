@@ -1,4 +1,4 @@
-const albumService = require('../services/albumService');
+const albumService = require('../services/AlbumService');
 
 const createAlbum = async (req, res) => {
     try {
