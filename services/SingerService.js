@@ -6,11 +6,11 @@ const createSinger = async (SingerData) => {
 };
 
 const getAllSingers = async () => {
-    return await Singer.find().populate('songs').populate('singer').populate('publisher');
+    return await Singer.find().populate('Song');
 };
 
 const getSingerById = async (SingerId) => {
-    return await Singer.findById(SingerId).populate('songs').populate('singer').populate('publisher');
+    return await Singer.findById(SingerId).populate('Song');
 };
 
 const updateSinger = async (SingerId, SingerData) => {
