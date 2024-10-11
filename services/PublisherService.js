@@ -6,25 +6,25 @@ const createPublisher = async (PublisherData) => {
 };
 
 const getAllPublishers = async () => {
-    return await Publisher.find().populate('songs').populate('singer').populate('publisher');
+    return await Publisher.find().populate('Singer');
 };
 
 const getPublisherById = async (publisherId) => {
-    return await Publisher.findById(publisherId).populate('songs').populate('singer').populate('publisher');
+    return await Publisher.findById(publisherId).populate('Singer');
 };
 
-const updatePublisher = async (albumId, albumData) => {
-    return await Publisher.findByIdAndUpdate(publisherId, albumData, { new: true });
+const updatePublisher = async (publisherId, publisherData) => {
+    return await Publisher.findByIdAndUpdate(publisherId, publisherData, { new: true });
 };
 
-const deleteAlbum = async (albumId) => {
-    return await Album.findByIdAndDelete(albumId);
+const deletePublisher = async (publisherId) => {
+    return await Publisher.findByIdAndDelete(publisherId);
 };
 
 module.exports = {
-    createAlbum,
-    getAllAlbums,
-    getAlbumById,
-    updateAlbum,
-    deleteAlbum
+    createPublisher,
+    getAllPublishers,
+    getPublisherById,
+    updatePublisher,
+    deletePublisher
 };
