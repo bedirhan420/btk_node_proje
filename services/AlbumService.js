@@ -6,11 +6,11 @@ const createAlbum = async (albumData) => {
 };
 
 const getAllAlbums = async () => {
-    return await Album.find().populate('songs').populate('singer').populate('publisher');
+    return await Album.find().populate('Song').populate('Singer').populate('Publisher');
 };
 
 const getAlbumById = async (albumId) => {
-    return await Album.findById(albumId).populate('songs').populate('singer').populate('publisher');
+    return await Album.findById(albumId).populate('Song').populate('Singer').populate('Publisher');
 };
 
 const updateAlbum = async (albumId, albumData) => {
