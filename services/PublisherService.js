@@ -1,30 +1,30 @@
 const Publisher = require('../models/publisher');
 
 const createPublisher = async (PublisherData) => {
-    const Publisher = new Publisher(publisherData);
-    return await publisher.save();
+    const Publisher = new Publisher(PublisherData);
+    return await Publisher.save();
 };
 
 const getAllPublishers = async () => {
-    return await Publisher.find().populate('songs').populate('singer').populate('publisher');
+    return await Publisher.find().populate('Album');
 };
 
 const getPublisherById = async (publisherId) => {
-    return await Publisher.findById(publisherId).populate('songs').populate('singer').populate('publisher');
+    return await Publisher.findById(publisherId).populate('Album');
 };
 
-const updatePublisher = async (albumId, albumData) => {
-    return await Publisher.findByIdAndUpdate(publisherId, albumData, { new: true });
+const updatePublisher = async (publisherId, publisherData) => {
+    return await Publisher.findByIdAndUpdate(publisherId, publisherData, { new: true });
 };
 
-const deleteAlbum = async (albumId) => {
-    return await Album.findByIdAndDelete(albumId);
+const deletePublisher = async (publisherId) => {
+    return await Publisher.findByIdAndDelete(publisherId);
 };
 
 module.exports = {
-    createAlbum,
-    getAllAlbums,
-    getAlbumById,
-    updateAlbum,
-    deleteAlbum
+    createPublisher,
+    getAllPublishers,
+    getPublisherById,
+    updatePublisher,
+    deletePublisher
 };

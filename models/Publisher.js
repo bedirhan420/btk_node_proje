@@ -6,8 +6,7 @@ const publisherSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    singer: [singerSchema]
-});
+    singer: { type: mongoose.Schema.Types.ObjectId, ref: 'Singer' }});
 
 const Publisher = mongoose.model('Publisher', publisherSchema);
 module.exports = {Publisher, Singer};
