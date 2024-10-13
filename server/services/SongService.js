@@ -1,18 +1,17 @@
 const Song = require('../models/Song');
 const Singer = require('../models/Singer');
 
-
 exports.createSong = async (songData) => {
   const song = new Song(songData);
-    await song.save();
+  await song.save();
   
-    await Singer.findByIdAndUpdate(
-      songData.singer, 
-      { $push: { songs: song._id } }, 
-      { new: true } 
-    );
+  await Singer.findByIdAndUpdate(
+    songData.singer, 
+    { $push: { songs: song._id } }, 
+    { new: true } 
+  );
   
-    return song;
+  return song;
 };
 
 exports.getAllSongs = async () => {

@@ -1,8 +1,16 @@
 const Album = require('../models/Album');
+const Publisher = require("../models/Publisher");
 
 exports.createAlbum = async (albumData) => {
   const album = new Album(albumData);
   await album.save();
+
+  await Publisher.findByIdAndUpdate(
+    albumData.publisher,
+    {$push:{albums:album._id}},
+    {new:true}
+  );
+
   return album;
 };
 
